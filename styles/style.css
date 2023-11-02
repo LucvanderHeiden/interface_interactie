@@ -1,50 +1,30 @@
-/**************/
-/* CSS REMEDY */
-/**************/
-
-/* naar een idee van Jen Simmons */
-*, *::after, *::before {
-  box-sizing:border-box;  
-}
-
 body {
-  margin:0;
+  margin: 0;
+  overflow: hidden;
 }
 
-button:not([disabled]) {
-  cursor:pointer;
+.stars {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #09011c;
+  overflow: hidden;
 }
 
-img {
-  max-width:100%;
+.star {
+  position: absolute;
+  background-color: #fff;
+  width: 2px;
+  height: 2px;
+  border-radius: 50%;
+  opacity: 1;
+  transition: opacity 5s, background-color 3s, transform 3s; /* Adjust the durations for the fading effect, color change, and growth */
 }
 
-
-
-
-
-/*********************/
-/* CUSTOM PROPERTIES */
-/*********************/
-
-:root {
-  --color-headings:crimson
-  /* ... */
-
+.star.fading {
+  opacity: 0;
+  background-color: #00ddff; /* Change to blue as they fade out */
+  transform: scale(3); /* Slightly grow the stars */
 }
-
-
-
-
-
-/********************/
-/* ALGEMENE STYLING */
-/********************/
-
-h1 {
-  color:var(--color-headings);
-}
-
-/* ... */
-
-
