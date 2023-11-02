@@ -54,3 +54,43 @@ body {
   transform: scale(1.7);
 }
 
+/* Timber Hearth */
+#timber {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  height: 20px;
+  width: 20px;
+  margin-left: -10px;
+  margin-top: -10px;
+  border-radius: 50%;
+  background-color: #277523;
+}
+#timber-orbit {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 260px;
+  height: 260px;
+  margin-top: -130px;
+  margin-left: -130px;
+  
+  border: 2px rgb(140 150 165 / 0.5) dashed;
+  border-radius: 50%;
+  -webkit-animation: spin-right 60s linear infinite;
+  -moz-animation: spin-right 60s linear infinite;
+  -ms-animation: spin-right 60s linear infinite;
+  -o-animation: spin-right 60s linear infinite;
+  animation: spin-right 60s linear infinite;
+}
+
+@keyframes spin-right {
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+

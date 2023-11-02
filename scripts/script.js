@@ -1,6 +1,6 @@
 function createStars() {
   const starryBackground = document.querySelector('.stars');
-  const numStars = 100; // Hoeveelheid sterren
+  const numStars = 150; // Hoeveelheid sterren
   const duration = 60 * 1000; // Duur van animatie
   const interval = duration / numStars; //Interval tussen verdwijnen van sterren
 
