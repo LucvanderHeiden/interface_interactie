@@ -23,4 +23,13 @@ function createStars() {
   });
 }
 
+function animateSun() {
+  const sun = document.querySelector('#sun');
+  sun.classList.remove('fading'); // Haal de "fading" weg zodat de pagina goed refresht
+  setTimeout(function () {
+    sun.classList.add('fading'); // Voeg de "fading" class toe om de animatie van de zon te starten
+  }, 100);
+}
+
 createStars();
+animateSun();

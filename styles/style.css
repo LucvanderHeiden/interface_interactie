@@ -1,8 +1,10 @@
+/* General */
 body {
   margin: 0;
   overflow: hidden;
 }
 
+/* Stars */
 .stars {
   position: absolute;
   top: 0;
@@ -20,11 +22,35 @@ body {
   height: 2px;
   border-radius: 50%;
   opacity: 1;
-  transition: opacity 5s, background-color 3s, transform 3s; /* Adjust the durations for the fading effect, color change, and growth */
+  transition: opacity 5s, background-color 3s, transform 3s; 
 }
 
 .star.fading {
   opacity: 0;
-  background-color: #00ddff; /* Change to blue as they fade out */
-  transform: scale(3); /* Slightly grow the stars */
+  background-color: #00ddff; 
+  transform: scale(3); 
 }
+
+/* Sun */
+#sun {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 100px;
+  width: 100px;
+  margin-top: -50px;
+  margin-left: -50px;
+  /* border: 2px orange solid; */
+  border-radius: 50%;
+  box-shadow: 0 0 64px rgb(255, 225, 0), inset 0 0 64px rgb(255, 150, 0);
+  background-color: rgb(255, 225, 0);
+  transition: background-color 60s, border 60s, box-shadow 60s, transform 60s;
+}
+
+#sun.fading {
+  /* border: 2px rgb(200, 0, 0) solid; */
+  box-shadow: 0 0 100px rgb(255, 20, 0), inset 0 0 64px rgb(255, 0, 0);
+  background-color: rgb(255, 20, 0);
+  transform: scale(1.7);
+}
+
