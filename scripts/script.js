@@ -31,5 +31,21 @@ function animateSun() {
   }, 100);
 }
 
+function animateHourglassTwins() {
+  const ember = document.querySelector('#ember');
+  const ash = document.querySelector('#ash');
+
+  ember.classList.remove('ember-end'); // Haal de "fading" weg zodat de pagina goed refresht
+  setTimeout(function () {
+    ember.classList.add('ember-end'); // Voeg de "fading" class toe om de animatie van de zon te starten
+  }, 100);
+
+  ash.classList.remove('ash-end'); // Haal de "fading" weg zodat de pagina goed refresht
+  setTimeout(function () {
+    ash.classList.add('ash-end'); // Voeg de "fading" class toe om de animatie van de zon te starten
+  }, 100);
+}
+
 createStars();
 animateSun();
+animateHourglassTwins();
