@@ -1,3 +1,7 @@
+const startButton = document.querySelector('#start-button');
+
+startButton.addEventListener('click', startSimulation);
+
 function createStars() {
   const starryBackground = document.querySelector('.stars');
   const numStars = 150; // Hoeveelheid sterren
@@ -74,7 +78,11 @@ document.addEventListener('visibilitychange', function() {
   }
 });
 
+function startSimulation() {
+    const zeroState = document.querySelector('#zero-state');
 
-createStars();
-animateSun();
-animateHourglassTwins();
+    zeroState.style.display = 'none';
+    createStars();
+    animateSun();
+    animateHourglassTwins();
+}

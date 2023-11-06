@@ -1,13 +1,62 @@
+@font-face {
+  font-family: SpaceMono;
+  src: url(../fonts/SpaceMono-Regular.woff2);
+}
+
 /* General */
 body {
   margin: 0;
   overflow: hidden;
 }
 
+/* Zero state */
+article {
+  position: absolute;
+  z-index: 10;
+  background-color: #1c4c64;
+  color: rgb(198, 226, 242);
+  display: grid;
+  justify-items: center;
+  height: 60vh;
+  width: 50vw;
+  margin-left: 25vw;
+  margin-top: 20vh;
+
+  border-radius: 40px;
+  font-family: SpaceMono;
+}
+
+article img {
+  margin-top: 20px;
+  width: 200px;
+}
+
+article p {
+  margin: 0px 100px;
+}
+
+article button {
+  width: 80px;
+  height: 40px;
+  margin: 20px;
+  border-radius: 10px;
+  font-family: SpaceMono;
+
+  background-color: #09011c;
+  color: white;
+  border: 3px lightblue solid;
+  cursor: pointer;
+}
+
+article button:hover {
+  color: orange;
+  border-color: orange;
+}
 
 /* Stars */
 .stars {
   position: absolute;
+  z-index: -1;
   top: 0;
   left: 0;
   width: 100%;
@@ -38,7 +87,7 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  z-index: 2;
+  z-index: 5;
   height: 100px;
   width: 100px;
   margin-top: -50px;
@@ -82,6 +131,7 @@ body {
 }
 #station-orbit {
   position: absolute;
+  z-index: 1;
   top: 50%;
   left: 50%;
   width: 150px;
@@ -111,7 +161,7 @@ body {
 
 /* Hourglass Twins */
 #twins-orbit {
- position: absolute;
+  position: absolute;
   top: 0;
   left: 50%;
   height: 30px;
@@ -207,6 +257,7 @@ body {
 
 #hourglass-orbit {
   position: absolute;
+  z-index: 1;
   top: 50%;
   left: 50%;
   width: 220px;
@@ -263,6 +314,7 @@ body {
 
 #timber-orbit {
   position: absolute;
+  z-index: 1;
   top: 50%;
   left: 50%;
   width: 290px;
@@ -305,6 +357,7 @@ body {
 }
 #brittle-orbit {
   position: absolute;
+  z-index: 1;
   top: 50%;
   left: 50%;
   width: 330px;
@@ -332,48 +385,6 @@ body {
   }
 }
 
-/* Brittle Hollow */
-#brittle {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  height: 20px;
-  width: 20px;
-  margin-left: -10px;
-  margin-top: -10px;
-  border-radius: 50%;
-  background-color: rgb(60, 0, 150);
-  box-shadow: inset 0 -4px 7px rgb(150, 0, 256);
-}
-#brittle-orbit {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 360px;
-  height: 360px;
-  margin-top: -180px;
-  margin-left: -180px;
-  rotate: 50deg;
-  
-  border: 2px rgb(140 150 165 / 0.2) dashed;
-  border-radius: 50%;
-  -webkit-animation: spin-right 80s linear infinite;
-  -moz-animation: spin-right 80s linear infinite;
-  -ms-animation: spin-right 80s linear infinite;
-  -o-animation: spin-right 80s linear infinite;
-  animation: spin-right 80s linear infinite;
-}
-
-@keyframes spin-right {
-  100% {
-    -webkit-transform: rotate(360deg);
-    -moz-transform: rotate(360deg);
-    -ms-transform: rotate(360deg);
-    -o-transform: rotate(360deg);
-    transform: rotate(360deg);
-  }
-}
-
 /* Giant's Deep */
 #giant {
   position: absolute;
@@ -389,6 +400,7 @@ body {
 }
 #giant-orbit {
   position: absolute;
+  z-index: 1;
   top: 50%;
   left: 50%;
   width: 470px;
@@ -430,6 +442,7 @@ body {
 }
 #bramble-orbit {
   position: absolute;
+  z-index: 1;
   top: 50%;
   left: 50%;
   width: 600px;
