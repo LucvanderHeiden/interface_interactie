@@ -10,10 +10,10 @@
       <h1>Welcome to the Outer Wilds solar system</h1>
       <p>
         The Outer Wilds solar system is very unique. The sun is at the end of
-        its lifecycle and is about to go supernova. When it does, the blast
-        destroys the entirety of the solar system. However, a mysterious force
-        sends you back in time exactly 22 minutes... You are stuck in a
-        timeloop.
+        its lifecycle and is about to go supernova. When it does, the blast will
+        destroy the entirety of the solar system. However, after dying to this
+        supernova you wake back up, exactly 22 minutes before the sun will
+        explode once again... You are stuck in a timeloop.
       </p>
       <button id="start-button">Start</button>
     </article>
@@ -27,12 +27,13 @@
     <ul>
       <li id="sun-orbit">
         <button id="sun" class="planet" data-planet-name="The Sun"></button>
-        <!-- <p>The Sun</p> -->
       </li>
       <li id="station-orbit">
-        <button id="station" class="planet" data-planet-name="Sun Station">
-          <!-- <p>Sun Station</p> -->
-        </button>
+        <button
+          id="station"
+          class="planet"
+          data-planet-name="Sun Station"
+        ></button>
       </li>
       <li id="hourglass-orbit">
         <div id="twins-orbit">
@@ -45,37 +46,40 @@
           ></button>
           <div class="quantum-moon"></div>
         </div>
-        <!-- <p>Hourglass Twins</p> -->
       </li>
       <li>
-        <button id="timber" class="planet" data-planet-name="Timber Hearth">
-          <!-- <p>Timber Hearth</p> -->
-        </button>
+        <button
+          id="timber"
+          class="planet"
+          data-planet-name="Timber Hearth"
+        ></button>
         <button class="quantum-moon"></button>
       </li>
       <li id="brittle-orbit">
         <button id="brittle" class="planet" data-planet-name="Brittle Hollow">
-          <!-- <p>Brittle Hollow</p> -->
+          <button class="quantum-moon"></button>
         </button>
-        <button class="quantum-moon"></button>
       </li>
       <li id="giant-orbit">
-        <button id="giant" class="planet" data-planet-name="Giant`s Deep">
-          <!-- <p>Giant's Deep</p> -->
-        </button>
+        <button
+          id="giant"
+          class="planet"
+          data-planet-name="Giant`s Deep"
+        ></button>
         <button class="quantum-moon"></button>
       </li>
       <li id="bramble-orbit">
-        <button id="bramble" class="planet" data-planet-name="Dark Bramble">
-          <!-- <p>Giant's Deep</p> -->
-        </button>
-        <div class="quantum-moon"></div>
+        <button
+          id="bramble"
+          class="planet"
+          data-planet-name="Dark Bramble"
+        ></button>
+        <button class="quantum-moon"></button>
       </li>
       <li id="stranger-orbit">
         <button class="planet" data-planet-name="The Stranger"></button>
       </li>
       <li id="eye-orbit">
-        <!-- <div id="eye" class="planet" data-planet-name="The Eye of the Universe"> -->
         <button
           class="planet"
           data-planet-name="The Eye of the Universe"
@@ -84,7 +88,6 @@
           <img src="images/eye.png" alt="The Eye of the Universe" />
         </button>
         <button class="quantum-moon"></button>
-        <!-- </div> -->
       </li>
     </ul>
 

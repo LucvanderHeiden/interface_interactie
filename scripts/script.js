@@ -1,8 +1,21 @@
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// Audio
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// Standard theme
 const themeSong = new Audio('audio/theme.mp3');
 themeSong.loop = true;
-var planetAudio = new Audio();
-planetAudio.loop = true;
+themeSong.volume = 0.3;
 
+// Planet specific audio;
+var planetAudio = new Audio();
+
+// Supernova audio
+const supernovaAudio = new Audio('audio/supernova_fast.mp3')
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// Initialization
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 const startButton = document.querySelector('#start-button');
 
 startButton.addEventListener('click', startSimulation);
@@ -53,6 +66,12 @@ function animateHourglassTwins() {
   setTimeout(function () {
     ash.classList.add('ash-end'); // Voeg de "ash-end" class toe om de animatie van de zon te starten
   }, 100);
+
+  setTimeout(function () {
+    supernovaAudio.play();
+    planetAudio.pause();
+    themeSong.pause(); // Voeg de "ash-end" class toe om de animatie van de zon te starten
+  }, 129000);
 }
 
 //Quantum Moon easter egg
@@ -125,6 +144,8 @@ function openInfoWindow(planet) { //Bij het klikken op een planeet opent het inf
   const planetInfo = getPlanetInfo(planetName);
   
   planetAudio = new Audio(planetInfo.song);
+  planetAudio.loop = true;
+  planetAudio.volume = 0.3;
 
   const h2 = infoWindow.querySelector('h2');
   const img = infoWindow.querySelector('img');
@@ -152,7 +173,7 @@ function getPlanetInfo(planetName) {
   const planetInfo = {
     'The Sun': {
       imageSrc: 'images/sun.png',
-      description: 'The sun is the center of the Outer Wilds solar system. This sun is at the end of it natural lifecycle. It is rapidly growing and will collapse under its own gravity resulting in a violent supernova within the next 22 minutes.',
+      description: 'The sun is at the center of the Outer Wilds solar system. This sun is at the end of it natural lifecycle. It is rapidly growing and will collapse under its own gravity resulting in a violent supernova within the next 22 minutes.',
       bgcolor: 'yellow',
       textcolor: 'black',
       song: 'audio/sun.mp3'
@@ -215,7 +236,7 @@ function getPlanetInfo(planetName) {
     },
     'The Stranger': {
       imageSrc: 'images/stranger.png',
-      description: 'The Eye of the Universe is the big unknown in the Outer Wilds universe. It is said to be extremely old, perhaps even older than the universe itself. The location of the Eye is unknown and it has been the Nomai`s ultimate goal find the Eye of the Universe.',
+      description: 'A mysterious and large spaceship has been given the name `The Stranger`. It seems to use some form of cloaking technology to hide itself. Where did it come from, what is it doing here and who is controlling it? You`ll have to explore to find out.',
       bgcolor: 'mediumspringgreen',
       textcolor: 'black',
       song: 'audio/stranger.mp3'
