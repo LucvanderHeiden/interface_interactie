@@ -34,9 +34,9 @@ function createStars() {
 
 function animateSun() {
   const sun = document.querySelector('#sun');
-  sun.classList.remove('fading'); // Haal de "fading" weg zodat de pagina goed refresht
+  sun.classList.remove('growing'); // Haal de "growing" weg zodat de pagina goed refresht
   setTimeout(function () {
-    sun.classList.add('fading'); // Voeg de "fading" class toe om de animatie van de zon te starten
+    sun.classList.add('growing'); // Voeg de "growing" class toe om de animatie van de zon te starten
   }, 100);
 }
 
@@ -121,7 +121,9 @@ function closeInfoWindow() {  //Bij close button indrukken sluit het informatie 
 function openInfoWindow(planet) { //Bij het klikken op een planeet opent het informatie venster
   planetAudio.pause();
   const planetName = planet.dataset.planetName; //Kijken welke planeet is geklikt en gebruiken dit om het venster met correcte info te vullen
+  
   const planetInfo = getPlanetInfo(planetName);
+  
   planetAudio = new Audio(planetInfo.song);
 
   const h2 = infoWindow.querySelector('h2');

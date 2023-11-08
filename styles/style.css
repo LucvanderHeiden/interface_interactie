@@ -49,6 +49,14 @@ button:hover {
   cursor: pointer;
 }
 
+li button {
+  border: none;
+}
+
+li button:hover {
+  border: 1px white solid;
+}
+
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 /* Zero state */
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
@@ -69,7 +77,6 @@ article:first-of-type img {
 article:first-of-type p {
   margin: 0px 100px;
 }
-
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 /* Stars */
@@ -105,7 +112,7 @@ article:first-of-type p {
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 /* Sun */
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-#sun {
+li:first-of-type > button {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -117,32 +124,33 @@ article:first-of-type p {
   border-radius: 50%;
   box-shadow: 0 0 64px rgb(255, 225, 0), inset 0 0 64px rgb(255, 140, 0);
   background-color: rgb(255, 225, 0);
-  transition: background-color 142s, border 142s, box-shadow 142s, transform 142s;
+  transition: background-color 142s, box-shadow 142s, transform 142s;
 }
 
-#sun > p {
+/* li:first-of-type > button > p {
   color: orange;
   position: relative;
   top: -40%;
   left: -40%;
   display: none;
   transition: transform 142s;
-}
+} */
 
-#sun:hover p {
+/* li:first-of-type > button:hover p {
   display: block;
-}
+} */
 
-#sun.fading {
+.growing {
   box-shadow: 0 0 100px rgb(255, 20, 0), inset 0 0 64px rgb(255, 0, 0);
   background-color: rgb(255, 20, 0);
   transform: scale(1.7);
 }
 
+
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 /* Sun Station */
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-#station {
+li:nth-of-type(2) > button {
   position: absolute;
   top: 0;
   left: 50%;
@@ -154,7 +162,7 @@ article:first-of-type p {
   background-color: rgb(121, 121, 104);
   box-shadow: inset 0 -1px 4px rgb(50, 0, 0);
 }
-#station-orbit {
+li:nth-of-type(2) {
   position: absolute;
   z-index: 9;
   top: 50%;
@@ -187,7 +195,7 @@ article:first-of-type p {
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 /* Hourglass Twins */
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-#twins-orbit {
+li:nth-of-type(3) > button {
   position: absolute;
   top: 0;
   left: 50%;
@@ -196,7 +204,7 @@ article:first-of-type p {
   margin-left: -15px;
   margin-top: -15px;
   border-radius: 50%;
-  /* background-color: red; */
+
    -webkit-animation: spin-left 12s linear infinite;
   -moz-animation: spin-left 12s linear infinite;
   -ms-animation: spin-left 12s linear infinite;
@@ -215,7 +223,7 @@ article:first-of-type p {
 }
 
 /* Ash Twin */
-#ash {
+li:nth-of-type(3) button:first-of-type {
   position: absolute;
   top: 0;
   left: 50%;
@@ -244,7 +252,7 @@ article:first-of-type p {
 }
 
 /* Ember Twin */
-#ember {
+li:nth-of-type(3) button:nth-of-type(2) {
  position: absolute;
   top: 0;
   left: 50%;
@@ -273,7 +281,7 @@ article:first-of-type p {
 }
 
 
-#sand {
+li:nth-of-type(3) > div > div {
   position: absolute;
   top: 0;
   left: 50%;
@@ -285,7 +293,7 @@ article:first-of-type p {
 
 }
 
-#hourglass-orbit {
+li:nth-of-type(3) > div {
   position: absolute;
   z-index: 8;
   top: 50%;
@@ -320,7 +328,7 @@ article:first-of-type p {
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 /* Timber Hearth */
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-#timber {
+li:nth-of-type(4) > button {
   text-align: center;
   position: absolute;
   top: 0;
@@ -336,7 +344,7 @@ article:first-of-type p {
   cursor: pointer;
 }
 
-#timber > p {
+/* #li:nth-of-type(4) > p {
   width: 4em;
   color: green;
   position: relative;
@@ -361,11 +369,11 @@ article:first-of-type p {
   }
 }
 
-#timber:hover > p {
+li:nth-of-type(4) > p {
   visibility: visible;
-}
+} */
 
-#timber-orbit {
+li:nth-of-type(4) {
   position: absolute;
   z-index: 7;
   top: 50%;
@@ -398,7 +406,7 @@ article:first-of-type p {
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 /* Brittle Hollow */
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-#brittle {
+li:nth-of-type(5) > button {
   position: absolute;
   top: 0;
   left: 50%;
@@ -410,7 +418,7 @@ article:first-of-type p {
   background-color: rgb(60, 0, 150);
   box-shadow: inset 0 -4px 7px rgb(150, 0, 256);
 }
-#brittle-orbit {
+li:nth-of-type(5) {
   position: absolute;
   z-index: 6;
   top: 50%;
@@ -440,7 +448,7 @@ article:first-of-type p {
   }
 }
 
-#brittle > p {
+/* li:nth-of-type(5) > p {
   width: 4em;
   color: purple;
   position: relative;
@@ -467,12 +475,12 @@ article:first-of-type p {
 
 #brittle:hover > p {
   visibility: visible;
-}
+} */
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 /* Giant's Deep */
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-#giant {
+li:nth-of-type(6) > button {
   position: absolute;
   top: 0;
   left: 50%;
@@ -484,7 +492,7 @@ article:first-of-type p {
   background-color: rgb(35, 144, 93);
   box-shadow: inset 0 -4px 7px rgb(0, 256, 256);
 }
-#giant-orbit {
+li:nth-of-type(6) {
   position: absolute;
   z-index: 5;
   top: 50%;
@@ -516,7 +524,7 @@ article:first-of-type p {
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 /* Dark Bramble */
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-#bramble {
+li:nth-of-type(7) > button {
   position: absolute;
   top: 0;
   left: 50%;
@@ -528,7 +536,7 @@ article:first-of-type p {
   background-color: rgb(62, 31, 2);
   box-shadow: inset 0 -4px 7px rgb(0, 256, 256);
 }
-#bramble-orbit {
+li:nth-of-type(7) {
   position: absolute;
   z-index: 4;
   top: 50%;
@@ -560,7 +568,7 @@ article:first-of-type p {
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 /* The Stranger (Easter egg) */
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-#stranger {
+li:nth-of-type(8) > button {
   position: absolute;
   top: 80%;
   left: 20%;
@@ -576,7 +584,7 @@ article:first-of-type p {
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 /* Eye of the Universe (Easter egg) */
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-#eye-orbit {
+li:nth-of-type(9) {
   position: absolute;
   z-index: 3;
   top: 50%;
@@ -606,9 +614,19 @@ article:first-of-type p {
   }
 }
 
-#eye-orbit > img {
+li:nth-of-type(9) img {
   width: 200px;
-  margin-top: 800px;
+  transform: translateY(700px);
+}
+
+li:nth-of-type(9) button {
+  background-color: transparent;
+  border: none;
+}
+
+li:nth-of-type(9) button:hover {
+  border: none;
+  filter: drop-shadow(3px 3px purple);
 }
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
@@ -627,6 +645,7 @@ article:first-of-type p {
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 article:last-of-type {
   display: none;
+  /* display: grid; */
   justify-items: center;
   height: 80vh;
   width: 20vw;
