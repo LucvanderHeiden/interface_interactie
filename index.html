@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <title>Outer Wilds Solar System</title>
     <link rel="stylesheet" type="text/css" href="styles/style.css" />
   </head>
   <body>
@@ -18,76 +19,64 @@
       <button id="start-button">Start</button>
     </article>
     <article id="info-window">
-      <h2>Timber Hearth</h2>
-      <img src="images/test.jpg" alt="Image of planet" />
-      <p>Timber Hearth is the home planet of the Hearthians.</p>
+      <h2></h2>
+      <img src="" alt="Image of planet" />
+      <p></p>
       <button id="close-button">Close</button>
     </article>
     <div class="stars"></div>
     <ul>
-      <li id="sun-orbit">
+      <li>
         <button id="sun" class="planet" data-planet-name="The Sun"></button>
       </li>
-      <li id="station-orbit">
+      <li>
         <button
           id="station"
           class="planet"
           data-planet-name="Sun Station"
         ></button>
       </li>
-      <li id="hourglass-orbit">
+      <li>
         <div id="twins-orbit">
           <button id="ash" class="planet" data-planet-name="Ash Twin"></button>
           <div id="sand"></div>
-          <button
-            id="ember"
-            class="planet"
-            data-planet-name="Ember Twin"
-          ></button>
-          <div class="quantum-moon"></div>
+          <button id="ember" class="planet" data-planet-name="Ember Twin">
+            <div class="quantum-moon"></div>
+          </button>
         </div>
       </li>
       <li>
-        <button
-          id="timber"
-          class="planet"
-          data-planet-name="Timber Hearth"
-        ></button>
-        <button class="quantum-moon"></button>
-      </li>
-      <li id="brittle-orbit">
-        <button id="brittle" class="planet" data-planet-name="Brittle Hollow">
-          <button class="quantum-moon"></button>
+        <button id="timber" class="planet" data-planet-name="Timber Hearth">
+          <div class="quantum-moon"></div>
         </button>
       </li>
-      <li id="giant-orbit">
-        <button
-          id="giant"
-          class="planet"
-          data-planet-name="Giant`s Deep"
-        ></button>
-        <button class="quantum-moon"></button>
+      <li>
+        <button id="brittle" class="planet" data-planet-name="Brittle Hollow">
+          <div class="quantum-moon"></div>
+        </button>
       </li>
-      <li id="bramble-orbit">
-        <button
-          id="bramble"
-          class="planet"
-          data-planet-name="Dark Bramble"
-        ></button>
-        <button class="quantum-moon"></button>
+      <li>
+        <button id="giant" class="planet" data-planet-name="Giant`s Deep">
+          <div class="quantum-moon"></div>
+        </button>
       </li>
-      <li id="stranger-orbit">
+      <li>
+        <button id="bramble" class="planet" data-planet-name="Dark Bramble">
+          <div class="quantum-moon"></div>
+        </button>
+      </li>
+      <li>
         <button class="planet" data-planet-name="The Stranger"></button>
       </li>
-      <li id="eye-orbit">
+      <li>
         <button
           class="planet"
           data-planet-name="The Eye of the Universe"
           alt="The Eye of the Universe"
         >
           <img src="images/eye.png" alt="The Eye of the Universe" />
+          <div class="quantum-moon"></div>
         </button>
-        <button class="quantum-moon"></button>
       </li>
     </ul>
 

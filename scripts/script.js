@@ -166,9 +166,6 @@ function openInfoWindow(planet) { //Bij het klikken op een planeet opent het inf
 }
 
 function getPlanetInfo(planetName) {
-  // Add logic here to retrieve the specific information for each planet
-  // For example, you can use a switch statement or an object with planet information
-  
   // Alle planeten met bijbehorende eigenschappen/informatie
   const planetInfo = {
     'The Sun': {
@@ -240,8 +237,7 @@ function getPlanetInfo(planetName) {
       bgcolor: 'mediumspringgreen',
       textcolor: 'black',
       song: 'audio/stranger.mp3'
-    },
-    // Add information for other planets here
+    }
   };
   
   return planetInfo[planetName] || {};
