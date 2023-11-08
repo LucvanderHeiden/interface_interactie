@@ -1,3 +1,8 @@
+const themeSong = new Audio('audio/theme.mp3');
+themeSong.loop = true;
+var planetAudio = new Audio();
+planetAudio.loop = true;
+
 const startButton = document.querySelector('#start-button');
 
 startButton.addEventListener('click', startSimulation);
@@ -73,11 +78,12 @@ selectRandomLocation();
 // Veranderen van de visibility
 document.addEventListener('visibilitychange', function() {
   if (document.hidden) {
-    // Kijken of de browser window zichtbaar is en runnen de functie opnieuw wanneer de window hidden is
+    // Kijken of de browser window zichtbaar is en runnen de functie opnieuw wanneer de window hidden is, bron: https://stackoverflow.com/questions/1760250/how-to-tell-if-browser-tab-is-active
     selectRandomLocation();
   }
 });
 
+// Start de simulatie, roept de functies aan die de sterren, zon en planeten animeren.
 function startSimulation() {
     const zeroState = document.querySelector('#zero-state');
 
@@ -85,4 +91,137 @@ function startSimulation() {
     createStars();
     animateSun();
     animateHourglassTwins();
+    themeSong.play();
 }
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// Planet information window
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+const infoWindow = document.querySelector('#info-window');
+const closeButton = document.querySelector('#close-button');
+const planetList = document.querySelector('ul'); // Parent element
+
+closeButton.addEventListener('click', closeInfoWindow); //Close button indrukken
+
+planetList.addEventListener('click', function (event) {
+  const planet = event.target.closest('.planet'); // Zoekt het eerste child element met de "planet" class
+
+  if (planet) {
+    openInfoWindow(planet);
+  }
+});
+
+function closeInfoWindow() {  //Bij close button indrukken sluit het informatie venster
+  infoWindow.style.display = 'none';
+
+  planetAudio.pause();
+  themeSong.play();
+}
+
+function openInfoWindow(planet) { //Bij het klikken op een planeet opent het informatie venster
+  planetAudio.pause();
+  const planetName = planet.dataset.planetName; //Kijken welke planeet is geklikt en gebruiken dit om het venster met correcte info te vullen
+  const planetInfo = getPlanetInfo(planetName);
+  planetAudio = new Audio(planetInfo.song);
+
+  const h2 = infoWindow.querySelector('h2');
+  const img = infoWindow.querySelector('img');
+  const p = infoWindow.querySelector('p');
+
+  h2.textContent = planetName; //Vervang de content met correcte content die bij de gekozen planeet past
+  img.src = planetInfo.imageSrc;
+  img.alt = `Image of ${planetName}`;
+  p.textContent = planetInfo.description;
+  infoWindow.style.backgroundColor = planetInfo.bgcolor;
+  infoWindow.style.color = planetInfo.textcolor;
+
+  infoWindow.style.display = 'grid'; //Zorg dat de informatie venster zichtbaar is
+
+  
+  themeSong.pause();
+  planetAudio.play();
+}
+
+function getPlanetInfo(planetName) {
+  // Add logic here to retrieve the specific information for each planet
+  // For example, you can use a switch statement or an object with planet information
+  
+  // Alle planeten met bijbehorende eigenschappen/informatie
+  const planetInfo = {
+    'The Sun': {
+      imageSrc: 'images/sun.png',
+      description: 'The sun is the center of the Outer Wilds solar system. This sun is at the end of it natural lifecycle. It is rapidly growing and will collapse under its own gravity resulting in a violent supernova within the next 22 minutes.',
+      bgcolor: 'yellow',
+      textcolor: 'black',
+      song: 'audio/sun.mp3'
+    },
+    'Sun Station': {
+      imageSrc: 'images/sunstation.png',
+      description: 'The Sun Station was built by the Nomai in an effort to generate an enormous amount of energy by taking advantage of the energy from the sun itself. The Sun Station travels in a very close orbit around the sun until it gets swallowed up by the expanding sun.',
+      bgcolor: 'orange',
+      textcolor: 'black',
+      song: 'audio/sunstation.mp3'
+    },
+    'Ash Twin': {
+      imageSrc: 'images/twins.png',
+      description: 'Ash Twin is part of the Hourglass Twins. These two celestial bodies revolve around eachother. Sand flows away from the Ash Twin towards the Ember Twin. This results in Ash Twin ending up a lot smaller and uncovered than it started in the loop.',
+      bgcolor: 'bisque',
+      textcolor: 'black',
+      song: 'audio/twins.mp3'
+    },
+    'Ember Twin': {
+      imageSrc: 'images/twins.png',
+      description: 'Ember Twin is part of the Hourglass Twins. These two celestial bodies revolve around eachother. Sand flows away from the Ash Twin towards the Ember Twin. This results in Ember Twin ending up a lot larger and covered in sand than how it started in the loop.',
+      bgcolor: 'brown',
+      textcolor: 'white',
+      song: 'audio/twins.mp3'
+    },
+    'Timber Hearth': {
+      imageSrc: 'images/timberhearth.png',
+      description: 'Timber Hearth is the home planet of the Hearthians. It is a forest planet which also features large grass plains, geysers and an extensive cave network.',
+      bgcolor: 'darkolivegreen',
+      textcolor: 'white',
+      song: 'audio/timberhearth.mp3'
+    },
+    'Brittle Hollow': {
+      imageSrc: 'images/brittlehollow.png',
+      description: 'Brittle Hollow is a planet with a black hole at its core. The crust of the planet is fragile and large parts continually break off and fall into the black hole. The underside of the crust however houses many hidden Nomai settlements.',
+      bgcolor: 'indigo',
+      textcolor: 'white',
+      song: 'audio/brittlehollow.mp3'
+    },
+    'Giant`s Deep': {
+      imageSrc: 'images/giantsdeep.png',
+      description: 'Giant`s Deep is the largest planet in the Outer Wilds solar system. It is a waterworld with strong gravity. Cyclones are found all over the surface of the planet, along with the occassional floating island.',
+      bgcolor: 'seagreen',
+      textcolor: 'white',
+      song: 'audio/giantsdeep.mp3'
+    },
+    'Dark Bramble': {
+      imageSrc: 'images/darkbramble.png',
+      description: 'Dark Bramble is a mysterious place that does not seem to adhere to the fundamental laws of the universe. What was once an ice planet has been transformed into a thorny place, full of twisting vines, thick fog and maybe even more...',
+      bgcolor: 'lightgrey',
+      textcolor: 'black',
+      song: 'audio/darkbramble.mp3'
+    },
+    'The Eye of the Universe': {
+      imageSrc: 'images/eye.png',
+      description: 'The Eye of the Universe is the big unknown in the Outer Wilds universe. It is said to be extremely old, perhaps even older than the universe itself. The location of the Eye is unknown and it has been the Nomai`s ultimate goal find the Eye of the Universe.',
+      bgcolor: 'darkslateblue',
+      textcolor: 'black',
+      song: 'audio/eye.mp3'
+    },
+    'The Stranger': {
+      imageSrc: 'images/stranger.png',
+      description: 'The Eye of the Universe is the big unknown in the Outer Wilds universe. It is said to be extremely old, perhaps even older than the universe itself. The location of the Eye is unknown and it has been the Nomai`s ultimate goal find the Eye of the Universe.',
+      bgcolor: 'mediumspringgreen',
+      textcolor: 'black',
+      song: 'audio/stranger.mp3'
+    },
+    // Add information for other planets here
+  };
+  
+  return planetInfo[planetName] || {};
+  
+}
+

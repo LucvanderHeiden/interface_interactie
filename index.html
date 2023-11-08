@@ -18,50 +18,68 @@
       <button id="start-button">Start</button>
     </article>
     <div class="stars"></div>
-    <div id="sun">
-      <p>Sun</p>
-    </div>
-    <div id="station-orbit">
-      <div id="station"></div>
-    </div>
-    <div id="hourglass-orbit">
-      <div id="twins-orbit">
-        <div id="ash"></div>
-        <div id="sand"></div>
-        <div id="ember">
-          <div class="quantum-moon"></div>
+    <ul>
+      <li id="sun" class="planet" data-planet-name="The Sun">
+        <!-- <p>The Sun</p> -->
+      </li>
+      <li id="station-orbit">
+        <div id="station" class="planet" data-planet-name="Sun Station">
+          <!-- <p>Sun Station</p> -->
         </div>
-      </div>
-    </div>
-    <div id="timber-orbit">
-      <div id="timber">
-        <p>Timber Hearth</p>
+      </li>
+      <li id="hourglass-orbit">
+        <div id="twins-orbit">
+          <div id="ash" class="planet" data-planet-name="Ash Twin"></div>
+          <div id="sand"></div>
+          <div id="ember" class="planet" data-planet-name="Ember Twin">
+            <div class="quantum-moon"></div>
+          </div>
+        </div>
+        <!-- <p>Hourglass Twins</p> -->
+      </li>
+      <li id="timber-orbit">
+        <div id="timber" class="planet" data-planet-name="Timber Hearth">
+          <div class="quantum-moon"></div>
+          <!-- <p>Timber Hearth</p> -->
+        </div>
+      </li>
+      <li id="brittle-orbit">
+        <div id="brittle" class="planet" data-planet-name="Brittle Hollow">
+          <div class="quantum-moon"></div>
+          <!-- <p>Brittle Hollow</p> -->
+        </div>
+      </li>
+      <li id="giant-orbit">
+        <div id="giant" class="planet" data-planet-name="Giant`s Deep">
+          <div class="quantum-moon"></div>
+          <!-- <p>Giant's Deep</p> -->
+        </div>
+      </li>
+      <li id="bramble-orbit">
+        <div id="bramble" class="planet" data-planet-name="Dark Bramble">
+          <div class="quantum-moon"></div>
+          <!-- <p>Giant's Deep</p> -->
+        </div>
+      </li>
+      <li id="stranger" class="planet" data-planet-name="The Stranger"></li>
+      <li id="eye-orbit">
+        <!-- <div id="eye" class="planet" data-planet-name="The Eye of the Universe"> -->
+        <img
+          src="images/eye.png"
+          class="planet"
+          data-planet-name="The Eye of the Universe"
+          alt="The Eye of the Universe"
+        />
         <div class="quantum-moon"></div>
-      </div>
-    </div>
-    <div id="brittle-orbit">
-      <div id="brittle">
-        <div class="quantum-moon"></div>
-      </div>
-    </div>
-    <div id="giant-orbit">
-      <div id="giant">
-        <div class="quantum-moon"></div>
-      </div>
-    </div>
-    <div id="bramble-orbit">
-      <div id="bramble">
-        <div class="quantum-moon"></div>
-      </div>
-    </div>
-    <!-- <div id="interloper-orbit">
-      <div id="interloper"></div>
-    </div> -->
-    <!-- <article>
+        <!-- </div> -->
+      </li>
+    </ul>
+    <article id="info-window">
       <h2>Timber Hearth</h2>
-      <img src="" alt="Image of planet" />
-      <p></p>
-    </article> -->
+      <img src="images/test.jpg" alt="Image of planet" />
+      <p>Timber Hearth is the home planet of the Hearthians.</p>
+      <button id="close-button">Close</button>
+    </article>
     <script src="scripts/script.js"></script>
   </body>
 </html>
