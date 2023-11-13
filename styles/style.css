@@ -1,6 +1,9 @@
 @font-face {
   font-family: SpaceMono;
-  src: url(../fonts/SpaceMono-Regular.woff2);
+  src: url(../fonts/SpaceMono-Regular.woff2) format("woff2");
+  font-style: normal;
+  font-weight: normal;
+  font-display:fallback;
 }
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
